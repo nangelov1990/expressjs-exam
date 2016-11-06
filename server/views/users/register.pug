@@ -1,0 +1,24 @@
+extends ../shared/layout
+block main-content
+    form(action="/users/create" method="post")
+        label(for="first-name") First name
+        br
+        input#first-name(type="text" name="firstName" value=user.firstName)
+        br
+        label(for="last-name") Last name
+        br
+        input#last-name(type="text" name="lastName" value=user.lastName)
+        br
+        label(for="username") Username
+        br
+        input#username(type="text" name="username" value=user.username)
+        br
+        label(for="password") Password
+        br
+        input#password(type="password" name="password")
+        br
+        label(for="confirm-password") Confirm password
+        br
+        input#confirm-password(type="password" name="confirmPassword")
+        br
+        input(type="submit" value="Create")

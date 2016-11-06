@@ -1,0 +1,10 @@
+extends ../shared/layout
+block main-content
+    each user in users
+        a(href='/profile/' + user.username)
+            h3= user.username
+        span= "Name: " + user.name
+        span.delimiter
+        if !(user.username == currentUser.username)
+            form(method="post" action="/admins/" + user.username + "/update")
+                input(type="submit" value="Add to admins")

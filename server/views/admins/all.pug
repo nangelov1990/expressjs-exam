@@ -1,0 +1,10 @@
+extends ../shared/layout
+block main-content
+    a(href="/admins/add") Add admins
+    each admin in admins
+        a(href='/profile/' + admin.username)
+            h2= admin.username
+        h3= "Name: " + admin.fullName
+        if !(admin.username == currentUser.username)
+            form(method="post" action="/admins/" + admin.username + "/delete")
+                input(type="submit" value="Delete")

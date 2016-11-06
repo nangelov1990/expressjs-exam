@@ -1,0 +1,85 @@
+extends ../shared/layout
+block main-content
+    h3= "Name: " + user.fullName
+    div.tweet-container
+        each tweet in user.tweets
+            div.tweet
+                a.author-name(href="/profile/" + tweet.author.username)
+                    span.author-name= tweet.author.fullName
+                span= ' '
+                a.author-username(href="/profile/" + tweet.author.username)
+                    span.author-username= '@' + tweet.author.username
+                div.message= tweet.message
+                div.details
+                    if tweet.tags.length > 0
+                        span= "Tags: "
+                        each tag in tweet.tags
+                            a(href=("/tag/" + tag))= "#" + tag
+                            span= " "
+                        br
+                    span= "Views: " + tweet.views
+                    span.delimiter
+                    if currentUser
+                        if tweet.likes.indexOf(currentUser.username) > -1
+                            if tweet.likes.length > 1
+                                span= "You and " + (tweet.likes.length - 1) + " others like this."
+                            else
+                                span= "You like this."
+                        else
+                            span= "Likes: " + tweet.likes.length
+                        if tweet.likes.indexOf(currentUser.username) > -1
+                            form(method="post" action="/tweet/" + tweet._id + "/dislike")
+                                input(type="submit" value="Dislike")
+                        else
+                            form(method="post" action="/tweet/" + tweet._id + "/like")
+                                input(type="submit" value="Like")
+                if currentUser
+                    if currentUser.roles.indexOf('Admin') > -1
+                        a(href=("/tweet/" + tweet._id + "/edit")) Edit
+                        span= " "
+                        form#delete-form-user(method="post" action="/tweet/" + tweet._id + "/delete")
+                            a(href="javascript:document.getElementById('delete-form-user').submit()") Delete
+        else
+            span= "No tweets yet"
+        if handleTweets.length > 0
+            h2= "Handles"
+        each tweet in handleTweets
+            div.tweet
+                a.author-name(href="/profile/" + tweet.author.username)
+                    span.author-name= tweet.author.fullName
+                span= ' '
+                a.author-username(href="/profile/" + tweet.author.username)
+                    span.author-username= '@' + tweet.author.username
+                div.message= tweet.message
+                div.details
+                    if tweet.tags.length > 0
+                        span= "Tags: "
+                        each tag in tweet.tags
+                            a(href=("/tag/" + tag))= "#" + tag
+                            span= " "
+                        br
+                    span= "Views: " + tweet.views
+                    span.delimiter
+                    if currentUser
+                        if tweet.likes.indexOf(currentUser.username) > -1
+                            if tweet.likes.length > 1
+                                span= "You and " + (tweet.likes.length - 1) + " others like this."
+                            else
+                                span= "You like this."
+                        else
+                            span= "Likes: " + tweet.likes.length
+                        if tweet.likes.indexOf(currentUser.username) > -1
+                            form(method="post" action="/tweet/" + tweet._id + "/dislike")
+                                input(type="submit" value="Dislike")
+                        else
+                            form(method="post" action="/tweet/" + tweet._id + "/like")
+                                input(type="submit" value="Like")
+                if currentUser
+                    if currentUser.roles.indexOf('Admin') > -1
+                        a(href=("/tweet/" + tweet._id + "/edit")) Edit
+                        span= " "
+                        form#delete-form-user(method="post" action="/tweet/" + tweet._id + "/delete")
+                            a(href="javascript:document.getElementById('delete-form-user').submit()") Delete
+        else
+            span= "No handles yet"
+    // TODO: show handlers

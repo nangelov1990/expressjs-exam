@@ -1,0 +1,34 @@
+head
+    title= "Twitter - ExpressJS Exam"
+    link(href="/css/site.css" rel="stylesheet")
+body
+    .container
+        h1= (heading || "Welcome")
+        ul.menu.horizontal-list
+            li
+                a(href="/") Home
+            if (currentUser)
+                li
+                    a(href="/tweet") Tweet
+                li.delimiter
+                li
+                    a(href="/profile/" + currentUser.username)= currentUser.username
+                if currentUser
+                    if currentUser.roles.indexOf("Admin") > -1
+                        li
+                            a(href="/admins/all") Admins
+                li
+                    form#logout-form(method="post" action="/users/logout")
+                        a(href="javascript:document.getElementById('logout-form').submit()") Logout
+            else
+                li.delimiter
+                li
+                    a(href="/users/register") Register
+                li
+                    a(href="/users/login") Log In
+        if (globalError)
+            h3= globalError
+        block main-content
+        block main-footer
+footer#page-footer
+    span= "Twitter || SoftUni ExpressJS exam application || Nikola Angelov 2016"

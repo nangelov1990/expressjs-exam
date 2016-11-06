@@ -1,0 +1,63 @@
+h1 {
+    color: red;
+}
+#page-footer {
+    position: static;
+    bottom: 30px;
+    text-align: center;
+}
+.container {
+    padding: 1% 30%;
+}
+ul, .menu, .tweets-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.horizontal-list li {
+    display: inline-block;
+    vertical-align: top;
+}
+.vertical-list li {
+    display: block;
+}
+.menu li:after {
+    content: "\00a0"
+}
+.delimiter {
+    margin-right: 25px;
+}
+#logout-form {
+    display: inline-block;
+}
+.message {
+    overflow: hidden;
+    word-break: normal;
+    font-size: 36px;
+    font-width: bold;
+}
+.content {
+    font-size: 20px;
+    word-wrap: break-word;
+}
+#page-footer, .tweet-container, .paging, .tweet {
+    word-break: break-all;
+}
+.tweet {
+    overflow: hidden;
+    border: 1px solid silver;
+    margin: 10px 0;
+    padding: 5px;
+}
+div.paging {
+    margin: 2% 0 0;
+}
+.author-name {
+    font-size: 30px;
+    color: black;
+    text-decoration: none;
+}
+.author-username {
+    font-size: 24px;
+    color: grey;
+    text-decoration: none;
+}

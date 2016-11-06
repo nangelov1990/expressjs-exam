@@ -1,0 +1,38 @@
+{
+  "name": "expressjs-exam",
+  "version": "1.0.0",
+  "description": "SoftUni || ExpressJS Exam 2016",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nangelov1990/expressjs-exam.git"
+  },
+  "keywords": [],
+  "author": "Nikola Angelov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nangelov1990/expressjs-exam/issues"
+  },
+  "homepage": "https://github.com/nangelov1990/expressjs-exam#readme",
+  "dependencies": {
+    "body-parser": "1.15.2",
+    "cookie-parser": "1.4.3",
+    "express": "4.14.0",
+    "express-session": "1.14.1",
+    "lorem-ipsum": "1.0.3",
+    "mongoose": "4.6.6",
+    "mongoose-auto-increment": "5.0.1",
+    "passport": "0.3.2",
+    "passport-local": "1.0.0",
+    "pug": "2.0.0-beta6"
+  },
+  "devDependencies": {
+    "eslint": "^3.9.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.3.1",
+    "eslint-plugin-standard": "^2.0.1"
+  }
+}

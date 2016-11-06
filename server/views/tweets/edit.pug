@@ -1,0 +1,8 @@
+extends ../shared/layout
+block main-content
+    form(action="/tweet/create" method="post")
+        label(for="message") Message
+        br
+        textarea#message(type="text" name="message")= tweet.message
+        br
+        input(type="submit" value="Tweet")
