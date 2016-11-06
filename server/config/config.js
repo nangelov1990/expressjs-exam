@@ -11,7 +11,7 @@ module.exports = {
   },
   production: {
     rootPath,
-    db: '',
+    db: 'mongodb://heroku_w68hcj3g:lm2kt5n925bngi2bloicphfcrj@ds031618.mlab.com:31618/heroku_w68hcj3g',
     port: process.env.NODE_ENV,
     sessionSecret: '@-session-secret#'
   }
