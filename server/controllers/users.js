@@ -6,7 +6,8 @@ const encryption = require('../utils/encryption')
 module.exports = {
   register: (req, res) => {
     let heading = 'Register'
-    res.render('users/register', { heading })
+    let user = req.body || {}
+    res.render('users/register', { heading, user })
   },
   create: (req, res) => {
     let heading = 'Register'
